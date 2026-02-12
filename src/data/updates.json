@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Q1 Production Targets Exceeded at Geita Site",
+    "date": "2024-03-15",
+    "category": "Extraction",
+    "image": "https://images.unsplash.com/photo-1599707367072-cd6ad6cb3d2e?q=80&w=2600&auto=format&fit=crop",
+    "description": "Primary extraction yields have surpassed projected estimates by 15% due to new efficiency protocols."
+  },
+  {
+    "id": 2,
+    "title": "New ESG Reforestation Initiative Launched",
+    "date": "2024-03-10",
+    "category": "Sustainability",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2613&auto=format&fit=crop",
+    "description": "AGC commits to planting 50,000 trees in the Lake Victoria region to offset carbon footprint."
+  },
+  {
+    "id": 3,
+    "title": "Weekly Gold Pour: Batch #492 Certified",
+    "date": "2024-03-01",
+    "category": "Production",
+    "image": "https://images.unsplash.com/photo-1610375461490-67981315250d?q=80&w=2670&auto=format&fit=crop",
+    "description": "Latest refinery batch completes 99.9% purity verification. Ready for export to Dubai partners."
+  }
+]
