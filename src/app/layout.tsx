@@ -17,9 +17,20 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "African Gold Company (AGC) | Ethical Gold Sourcing & Visits",
-  description: "Direct access to primary gold production in Tanzania. Book a site visit to our extraction and refinement facilities.",
-  keywords: ["Tanzania Gold", "Direct Gold Sourcing", "Gold Refinery Visit", "Ethical Mining Investment"],
+  title: "African Gold Company - From Earth to Excellence",
+  description: "Licensed extraction, ethical refinement, and conflict-free gold exports from Tanzania. Institutional-grade gold for verified global partners.",
+  keywords: ["gold mining", "Tanzania gold", "ethical gold sourcing", "gold exports", "African Gold Company", "Geita gold"],
+  openGraph: {
+    title: "African Gold Company - From Earth to Excellence",
+    description: "Licensed extraction, ethical refinement, and conflict-free gold exports from Tanzania.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "African Gold Company",
+    description: "Institutional-grade gold from Tanzania",
+  },
 };
 
 export default function RootLayout({
