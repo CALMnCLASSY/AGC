@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Send } from "lucide-react";
 
 export function Footer() {
     return (
@@ -12,17 +12,17 @@ export function Footer() {
                             African Gold Co.
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Ethical mining, direct sourcing, and operational transparency.
-                            Connecting global investors with Tanzania's primary gold production.
+                            Tanzania's premier gold dealer. We offer the best market prices for 99.9% pure gold,
+                            direct from our licensed mines to global buyers.
                         </p>
                         <div className="flex space-x-4 pt-2">
-                            <Link href="#" className="text-gray-400 hover:text-gold-500 transition-colors">
+                            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors">
                                 <Facebook className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-gray-400 hover:text-gold-500 transition-colors">
-                                <Twitter className="h-5 w-5" />
+                            <Link href="https://t.me/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors">
+                                <Send className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-gray-400 hover:text-gold-500 transition-colors">
+                            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors">
                                 <Linkedin className="h-5 w-5" />
                             </Link>
                         </div>
@@ -41,16 +41,16 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Support */}
+                    {/* Products */}
                     <div className="space-y-4">
                         <h4 className="text-gold-500 font-heading text-sm font-bold tracking-widest uppercase">
-                            Client Visit
+                            Our Gold
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-400">
-                            <li><Link href="#" className="hover:text-white transition-colors">Book a Site Tour</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Security Protocols</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Partner Hotels</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Visa & Travel</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">Gold Bars</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">Bulk Orders</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">Investment Gold</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">Current Prices</Link></li>
                         </ul>
                     </div>
 

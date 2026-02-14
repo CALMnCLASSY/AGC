@@ -22,10 +22,10 @@ export function Navbar() {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-gold-500 to-gold-600 rounded-sm flex items-center justify-center shadow-lg shadow-gold-500/30">
-                            <span className="text-charcoal-900 font-bold text-xl">A</span>
+                        <div className="w-12 h-12 bg-gradient-to-br from-gold-500 to-gold-600 rounded-md flex items-center justify-center shadow-lg shadow-gold-500/30">
+                            <span className="text-charcoal-900 font-bold text-2xl">A</span>
                         </div>
-                        <span className="text-white font-heading text-lg tracking-widest uppercase font-bold">
+                        <span className="text-white font-heading text-xl tracking-wide uppercase font-bold">
                             African <span className="gold-gradient-text">Gold</span> Co.
                         </span>
                     </div>
@@ -53,7 +53,7 @@ export function Navbar() {
                             <span className="text-gold-500/90 text-xs uppercase tracking-wider font-medium">Licensed Exporter</span>
                         </div>
                         <Button variant="default" className="shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-shadow">
-                            Book a Site Visit
+                            Get a Quote
                         </Button>
                     </div>
 
@@ -90,7 +90,7 @@ export function Navbar() {
                                 </Link>
                             ))}
                             <div className="pt-4 pb-2">
-                                <Button className="w-full shadow-lg shadow-gold-500/20">Book a Site Visit</Button>
+                                <Button className="w-full shadow-lg shadow-gold-500/20">Get a Quote</Button>
                             </div>
                         </div>
                     </motion.div>

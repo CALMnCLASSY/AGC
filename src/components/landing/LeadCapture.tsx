@@ -38,10 +38,10 @@ export function LeadCapture() {
 
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">
-                        Begin Your <span className="gold-gradient-text">Inquiry</span>
+                        Request Your <span className="gold-gradient-text">Quote</span>
                     </h2>
                     <p className="text-gray-400 text-lg">
-                        Secure client onboarding for wholesale and investment partners.
+                        Get the best gold prices in the market. Personalized quotes for all purchase types.
                     </p>
                 </div>
 
@@ -68,9 +68,9 @@ export function LeadCapture() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h3 className="text-xl text-white font-bold mb-6 uppercase tracking-wider">01. Select Inquiry Type</h3>
+                                    <h3 className="text-xl text-white font-bold mb-6 uppercase tracking-wider">01. Select Purchase Type</h3>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                        {["Wholesale Gold", "Private Investment", "Strategic Partnership"].map((type) => (
+                                        {["Buy Gold Bars", "Bulk Purchase", "Investment Gold"].map((type) => (
                                             <div
                                                 key={type}
                                                 onClick={() => setFormData({ ...formData, inquiryType: type })}
@@ -107,7 +107,7 @@ export function LeadCapture() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h3 className="text-xl text-white font-bold mb-6 uppercase tracking-wider">02. Compliance Details</h3>
+                                    <h3 className="text-xl text-white font-bold mb-6 uppercase tracking-wider">02. Your Details</h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <Label htmlFor="name">Full Name</Label>
@@ -164,12 +164,12 @@ export function LeadCapture() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h3 className="text-xl text-white font-bold mb-6 uppercase tracking-wider">03. Verification</h3>
+                                    <h3 className="text-xl text-white font-bold mb-6 uppercase tracking-wider">03. Purchase Verification</h3>
 
                                     <div className="glass-panel border border-dashed border-gold-500/30 rounded-lg p-8 text-center hover:border-gold-500/50 transition-colors">
                                         <Upload className="h-10 w-10 text-gray-500 mx-auto mb-4" />
                                         <Label htmlFor="pof" className="block text-lg text-white mb-2 cursor-pointer hover:text-gold-500 transition-colors">
-                                            Upload Proof of Funds / LoI
+                                            Upload Proof of Funds (Optional)
                                         </Label>
                                         <Input
                                             id="pof"
@@ -186,7 +186,7 @@ export function LeadCapture() {
                                     <div className="flex justify-between pt-6">
                                         <Button type="button" variant="ghost" onClick={() => setStep(2)} className="text-gray-400 hover:text-white">Back</Button>
                                         <Button type="submit" className="w-full md:w-auto bg-gold-500 text-charcoal-900 hover:bg-gold-400 shadow-lg shadow-gold-500/30">
-                                            Submit Inquiry
+                                            Get My Quote
                                         </Button>
                                     </div>
                                 </motion.div>

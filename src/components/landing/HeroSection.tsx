@@ -41,7 +41,7 @@ export function HeroSection() {
                     transition={{ duration: 1, delay: 0.2 }}
                     className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight tracking-tight"
                 >
-                    From Earth to <span className="gold-gradient-text">Excellence</span>
+                    Premium Gold at <span className="gold-gradient-text">Unbeatable Prices</span>
                 </motion.h1>
 
                 <motion.p
@@ -50,7 +50,7 @@ export function HeroSection() {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="text-gray-300 text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed"
                 >
-                    Licensed extraction, ethical refinement, and conflict-free exports. African Gold Company delivers institutional-grade gold to verified global partners.
+                    Direct from our mines to you. We offer the best gold prices in the market with 99.9% purity, ethical sourcing, and full export licensing. Get your personalized quote today.
                 </motion.p>
 
                 <motion.div
@@ -60,10 +60,10 @@ export function HeroSection() {
                     className="flex flex-col sm:flex-row gap-4 justify-center items-center"
                 >
                     <Button size="lg" className="w-full sm:w-auto text-lg px-10 py-6 shadow-2xl shadow-gold-500/40 hover:shadow-gold-500/60 transition-all">
-                        Book a Site Visit
+                        Get a Quote
                     </Button>
                     <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg px-10 py-6 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-charcoal-900 shadow-lg shadow-gold-500/20">
-                        View Operations
+                        View Our Gold
                     </Button>
                 </motion.div>
             </div>
