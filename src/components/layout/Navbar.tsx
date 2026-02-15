@@ -27,8 +27,8 @@ export function Navbar() {
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="relative">
                             {/* Golden A Logo with enhanced styling */}
-                            <div className="w-12 h-12 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 rounded-lg flex items-center justify-center shadow-lg shadow-gold-500/40 group-hover:shadow-gold-500/70 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                                <span className="text-2xl font-bold text-charcoal-900">A</span>
+                            <div className="w-12 h-12 bg-charcoal-900 border-2 border-gold-500 rounded-lg flex items-center justify-center shadow-lg shadow-gold-500/40 group-hover:shadow-gold-500/70 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                <span className="text-2xl font-bold text-gold-500">A</span>
                             </div>
                         </div>
                         <div className="flex flex-col">

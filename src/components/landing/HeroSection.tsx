@@ -14,7 +14,7 @@ export function HeroSection() {
             <div className="absolute inset-0 z-0">
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-slow-zoom"
-                    style={{ 
+                    style={{
                         backgroundImage: "url('/gallery/operations/lvgoldfield.jpeg')",
                         backgroundAttachment: "fixed"
                     }}
@@ -74,7 +74,15 @@ export function HeroSection() {
                     >
                         Get a Quote <ChevronRight className="ml-2 h-5 w-5" />
                     </Button>
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg px-10 py-6 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-charcoal-900 shadow-lg shadow-gold-500/20">
+                    <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => {
+                            const productsSection = document.getElementById('products');
+                            productsSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                        className="w-full sm:w-auto text-lg px-10 py-6 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-charcoal-900 shadow-lg shadow-gold-500/20"
+                    >
                         View Our Gold
                     </Button>
                 </motion.div>
@@ -86,6 +94,10 @@ export function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, y: [0, 10, 0] }}
                 transition={{ opacity: { delay: 1 }, y: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
+                onClick={() => {
+                    const nextSection = document.getElementById('operations');
+                    nextSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
             >
                 <div className="flex flex-col items-center gap-2 text-gold-500/70 hover:text-gold-500 transition-colors cursor-pointer">
                     <span className="text-xs uppercase tracking-widest font-medium">Discover More</span>
