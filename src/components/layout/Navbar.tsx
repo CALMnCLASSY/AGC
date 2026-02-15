@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { GoldPriceTicker } from "@/components/ui/GoldPriceTicker";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +23,11 @@ export function Navbar() {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center gap-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-gold-500 to-gold-600 rounded-md flex items-center justify-center shadow-lg shadow-gold-500/30">
-                            <span className="text-charcoal-900 font-bold text-2xl">A</span>
-                        </div>
+                        <img
+                            src="/favicon.ico"
+                            alt="AGC Logo"
+                            className="w-10 h-10 rounded-md shadow-lg"
+                        />
                         <span className="text-white font-heading text-xl tracking-wide uppercase font-bold">
                             African <span className="gold-gradient-text">Gold</span> Co.
                         </span>
@@ -48,6 +51,7 @@ export function Navbar() {
 
                     {/* CTA & Actions */}
                     <div className="hidden md:flex items-center gap-4">
+                        <GoldPriceTicker />
                         <div className="flex items-center gap-2 glass-panel px-3 py-1.5 rounded-full border border-gold-500/20">
                             <ShieldCheck className="w-4 h-4 text-gold-500" />
                             <span className="text-gold-500/90 text-xs uppercase tracking-wider font-medium">Licensed Exporter</span>

@@ -11,7 +11,7 @@ const operations = [
         description: "Advanced geological surveys and mapping in the Lake Victoria Goldfields.",
         icon: Pickaxe,
         stats: "250+ Sites Mapped",
-        image: "https://images.unsplash.com/photo-1578321272166-b64d787d5595?q=80&w=2574&auto=format&fit=crop",
+        image: "/gallery/operations/goldmineworkers.jpeg",
     },
     {
         id: "extraction",
@@ -19,7 +19,7 @@ const operations = [
         description: "Primary production using ethical, high-efficiency mining techniques.",
         icon: Factory,
         stats: "1.2T Processed/Year",
-        image: "https://images.unsplash.com/photo-1629814486588-4228c242c7aa?q=80&w=2670&auto=format&fit=crop",
+        image: "/gallery/operations/goldprocessing.jpeg",
     },
     {
         id: "refinement",
@@ -27,7 +27,7 @@ const operations = [
         description: "On-site processing to 99.9% purity standards for direct export.",
         icon: Gem,
         stats: "99.9% Purity",
-        image: "https://images.unsplash.com/photo-1610375461490-67981315250d?q=80&w=2670&auto=format&fit=crop",
+        image: "/gallery/operations/goldrefine3.jpeg",
     },
 ];
 

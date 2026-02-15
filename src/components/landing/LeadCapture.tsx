@@ -21,10 +21,37 @@ export function LeadCapture() {
         setStep(step + 1);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form Submitted", formData);
-        alert("Inquiry Received. Our compliance team will review your documents.");
+
+        try {
+            // Send form data to email API endpoint
+            const response = await fetch('/api/send-quote-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                alert("Quote request received! Our team will contact you within 24 hours.");
+                // Reset form
+                setFormData({
+                    inquiryType: "",
+                    name: "",
+                    email: "",
+                    company: "",
+                    proofOfFunds: null,
+                });
+                setStep(1);
+            } else {
+                throw new Error('Failed to send request');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert("There was an error sending your request. Please try emailing us directly at corporate@africangold.co.tz");
+        }
     };
 
     return (

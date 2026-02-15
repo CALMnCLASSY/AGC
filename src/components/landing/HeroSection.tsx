@@ -11,7 +11,7 @@ export function HeroSection() {
             <div className="absolute inset-0 z-0">
                 <div
                     className="absolute inset-0 bg-cover bg-center animate-slow-zoom"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=2670&auto=format&fit=crop')" }}
+                    style={{ backgroundImage: "url('/gallery/operations/lvgoldfield.jpeg')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/90 via-charcoal-900/70 to-charcoal-900/95" />
 
@@ -50,7 +50,7 @@ export function HeroSection() {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="text-gray-300 text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed"
                 >
-                    Direct from our mines to you. We offer the best gold prices in the market with 99.9% purity, ethical sourcing, and full export licensing. Get your personalized quote today.
+                    Direct from our mines to you. We offer the best gold prices in the market with highest purity, ethical sourcing, and full export licensing. Get your personalized quote today.
                 </motion.p>
 
                 <motion.div

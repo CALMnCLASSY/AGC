@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Send, MessageCircle } from "lucide-react";
 
 export function Footer() {
     return (
@@ -21,6 +21,9 @@ export function Footer() {
                             </Link>
                             <Link href="https://t.me/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors">
                                 <Send className="h-5 w-5" />
+                            </Link>
+                            <Link href="https://wa.me/255123456789?text=I%20want%20to%20buy%20gold" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors">
+                                <MessageCircle className="h-5 w-5" />
                             </Link>
                             <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 transition-colors">
                                 <Linkedin className="h-5 w-5" />
@@ -66,7 +69,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="h-5 w-5 text-gold-500 flex-shrink-0" />
-                                <span>+255 123 456 789</span>
+                                <span>+255 619 29850</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="h-5 w-5 text-gold-500 flex-shrink-0" />
