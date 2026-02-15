@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 // Dynamically import Leaflet components to avoid SSR issues
@@ -43,8 +44,11 @@ export function LocationModule() {
                         </h2>
                         <p className="text-gray-400 text-lg">Lake Victoria Goldfields, Geita Region, Tanzania</p>
                     </div>
-                    <div className="w-full h-96 glass-panel rounded-lg flex items-center justify-center">
-                        <p className="text-gray-400">Loading map...</p>
+                    <div className="w-full h-96 glass-panel rounded-lg flex items-center justify-center border border-gold-500/20">
+                        <div className="text-center">
+                            <div className="h-8 w-8 border-4 border-gold-500/30 border-t-gold-500 rounded-full animate-spin mx-auto mb-4"></div>
+                            <p className="text-gray-400">Loading map...</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -98,21 +102,38 @@ export function LocationModule() {
 
                 {/* Contact Info Below Map */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                    <div className="glass-panel p-6 rounded-lg border border-gold-500/20 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="glass-panel p-6 rounded-lg border border-gold-500/20 text-center hover:border-gold-500/40 transition-all duration-300 hover:scale-105"
+                    >
                         <MapPin className="h-8 w-8 text-gold-500 mx-auto mb-3" />
-                        <h3 className="text-white font-bold mb-2">Address</h3>
-                        <p className="text-gray-400 text-sm">Mwanza Region, Lake Victoria Goldfields, Tanzania</p>
-                    </div>
-                    <div className="glass-panel p-6 rounded-lg border border-gold-500/20 text-center">
+                        <h3 className="text-white font-bold mb-2 font-heading tracking-wide">Address</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">Mwanza Region, Lake Victoria Goldfields, Tanzania</p>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="glass-panel p-6 rounded-lg border border-gold-500/20 text-center hover:border-gold-500/40 transition-all duration-300 hover:scale-105"
+                    >
                         <Phone className="h-8 w-8 text-gold-500 mx-auto mb-3" />
-                        <h3 className="text-white font-bold mb-2">Phone</h3>
-                        <p className="text-gray-400 text-sm">+255 761 929 850</p>
-                    </div>
-                    <div className="glass-panel p-6 rounded-lg border border-gold-500/20 text-center">
+                        <h3 className="text-white font-bold mb-2 font-heading tracking-wide">Phone</h3>
+                        <p className="text-gray-400 text-sm"><a href="tel:+255761929850" className="hover:text-gold-500 transition-colors">+255 761 929 850</a></p>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="glass-panel p-6 rounded-lg border border-gold-500/20 text-center hover:border-gold-500/40 transition-all duration-300 hover:scale-105"
+                    >
                         <Mail className="h-8 w-8 text-gold-500 mx-auto mb-3" />
-                        <h3 className="text-white font-bold mb-2">Email</h3>
-                        <p className="text-gray-400 text-sm">corporate@africangold.co.tz</p>
-                    </div>
+                        <h3 className="text-white font-bold mb-2 font-heading tracking-wide">Email</h3>
+                        <p className="text-gray-400 text-sm"><a href="mailto:corporate@africangold.co.tz" className="hover:text-gold-500 transition-colors">corporate@africangold.co.tz</a></p>
+                    </motion.div>
                 </div>
             </div>
         </section>

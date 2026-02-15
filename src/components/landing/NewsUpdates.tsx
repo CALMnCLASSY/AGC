@@ -38,20 +38,25 @@ export function NewsUpdates() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="group glass-card rounded-lg overflow-hidden hover:border-gold-500/50 transition-all"
+                            className="group glass-card rounded-lg overflow-hidden hover:border-gold-500/50 transition-all hover:scale-105 cursor-pointer"
                         >
-                            <div className="relative h-48 overflow-hidden">
+                            <div className="relative h-48 overflow-hidden bg-charcoal-800">
                                 <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                    style={{ backgroundImage: `url(${item.image})` }}
+                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                    style={{ 
+                                        backgroundImage: `url(${item.image})`,
+                                        backgroundAttachment: "fixed"
+                                    }}
+                                    role="img"
+                                    aria-label={item.title}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/50 to-transparent" />
                                 <div className="absolute top-4 left-4 bg-gold-500 text-charcoal-900 text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-full shadow-lg shadow-gold-500/30">
                                     {item.category}
                                 </div>
                             </div>
 
-                            <div className="p-6 glass-panel border-t border-gold-500/10">
+                            <div className="p-6 glass-panel border-t border-gold-500/10 flex flex-col flex-grow">
                                 <div className="flex items-center gap-2 text-gray-500 text-xs mb-3">
                                     <Calendar className="h-3 w-3" />
                                     <span>{new Date(item.date).toLocaleDateString()}</span>
@@ -61,11 +66,11 @@ export function NewsUpdates() {
                                     {item.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
+                                <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed flex-grow">
                                     {item.description}
                                 </p>
 
-                                <Link href="#" className="inline-flex items-center text-gold-500 text-sm hover:underline underline-offset-4 font-medium">
+                                <Link href="#" className="inline-flex items-center text-gold-500 text-sm hover:text-gold-400 hover:underline underline-offset-4 font-medium transition-colors">
                                     Read Full Report <ArrowRight className="ml-1 h-3 w-3" />
                                 </Link>
                             </div>

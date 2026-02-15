@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, Shield, Sparkles } from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 const products = [
     {
@@ -36,8 +37,10 @@ const products = [
 ];
 
 export function ProductShowcase() {
+    const { openQuote } = useModal();
+
     return (
-        <section className="py-24 bg-gradient-to-b from-charcoal-800 via-charcoal-900 to-charcoal-800 relative overflow-hidden">
+        <section id="products" className="py-24 bg-gradient-to-b from-charcoal-800 via-charcoal-900 to-charcoal-800 relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-gold-500 rounded-full blur-[120px]" />
@@ -77,14 +80,18 @@ export function ProductShowcase() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative glass-card rounded-lg overflow-hidden hover:scale-105 transition-all duration-300"
+                            onClick={openQuote}
+                            className="group glass-card rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col h-full"
                         >
-                            <div className="relative h-64 overflow-hidden">
+                            <div className="relative h-64 w-full flex-shrink-0 bg-charcoal-800">
                                 <Image
                                     src={product.image}
                                     alt={product.name}
                                     fill
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                    priority={index < 2}
+                                    placeholder="empty"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/50 to-transparent opacity-90 group-hover:opacity-70 transition-opacity" />
 
@@ -94,11 +101,11 @@ export function ProductShowcase() {
                                 </div>
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-6 flex flex-col flex-grow">
                                 <h3 className="text-white font-heading font-bold text-lg mb-2 group-hover:text-gold-400 transition-colors">
                                     {product.name}
                                 </h3>
-                                <p className="text-gray-400 text-sm">{product.description}</p>
+                                <p className="text-gray-400 text-sm flex-grow">{product.description}</p>
                             </div>
                         </motion.div>
                     ))}

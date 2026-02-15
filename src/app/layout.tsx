@@ -3,34 +3,33 @@ import { Inter, Outfit } from "next/font/google"; // Import fonts
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SocialFloat } from "@/components/ui/SocialFloat";
+import { ModalProvider } from "@/context/ModalContext";
+import { QuoteModal } from "@/components/ui/QuoteModal";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
+  subsets: ["latin"],
 });
 
 const outfit = Outfit({
-  subsets: ["latin"],
   variable: "--font-outfit",
-  display: "swap",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "African Gold Company - Best Gold Prices in Tanzania",
-  description: "Buy premium 99.9% pure gold direct from Tanzania's licensed mines. We offer the best gold prices in the market with ethical sourcing and full export licensing. Get your quote today.",
-  keywords: ["buy gold Tanzania", "gold prices", "gold dealer", "investment gold", "gold bars Tanzania", "African Gold Company", "99.9% pure gold"],
+  description: "Premier gold dealer in Tanzania. We sell 99.9% pure gold bars and nuggets directly from Geita mines. Get competitive market prices.",
+  keywords: ["buy gold tanzania", "gold bars for sale", "african gold price", "geita gold miners", "gold investment tanzania"],
   openGraph: {
-    title: "African Gold Company - Best Gold Prices in Tanzania",
-    description: "Buy premium 99.9% pure gold direct from our licensed mines. Unbeatable prices, ethical sourcing, full licensing.",
+    title: "African Gold Company - Buy Gold in Tanzania",
+    description: "Secure, fully licensed gold dealer. 99.9% purity certified.",
     type: "website",
-    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "African Gold Company",
-    description: "Best gold prices in Tanzania - 99.9% pure gold direct from the source",
+    title: "African Gold Co. - Premium Gold Sales",
+    description: "Direct source for Tanzanian gold. Best prices guaranteed.",
   },
 };
 
@@ -42,12 +41,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body className="bg-background text-foreground antialiased selection:bg-gold-500 selection:text-charcoal-900 flex flex-col min-h-screen">
-        <SocialFloat />
-        <Navbar />
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
-        <Footer />
+        <ModalProvider>
+          <QuoteModal />
+          <SocialFloat />
+          <Navbar />
+          <main className="flex-grow pt-20">
+            {children}
+          </main>
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

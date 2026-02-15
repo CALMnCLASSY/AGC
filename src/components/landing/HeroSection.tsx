@@ -2,18 +2,26 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, MapPin } from "lucide-react";
+import { ChevronRight, ShieldCheck, ChevronDown } from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 export function HeroSection() {
+    const { openQuote } = useModal();
+
     return (
-        <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-charcoal-900">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-charcoal-900">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <div
-                    className="absolute inset-0 bg-cover bg-center animate-slow-zoom"
-                    style={{ backgroundImage: "url('/gallery/operations/lvgoldfield.jpeg')" }}
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-slow-zoom"
+                    style={{ 
+                        backgroundImage: "url('/gallery/operations/lvgoldfield.jpeg')",
+                        backgroundAttachment: "fixed"
+                    }}
+                    role="img"
+                    aria-label="Gold mining operations background"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/90 via-charcoal-900/70 to-charcoal-900/95" />
+                <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/85 via-charcoal-900/60 to-charcoal-900/95" />
 
                 {/* Glow Effects */}
                 <div className="absolute inset-0 opacity-20">
@@ -31,7 +39,7 @@ export function HeroSection() {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="glass-panel px-4 py-2 rounded-full inline-flex items-center gap-2 mb-8 border border-gold-500/30"
                 >
-                    <MapPin className="h-4 w-4 text-gold-500" />
+                    <ShieldCheck className="h-4 w-4 text-gold-500" />
                     <span className="text-gold-500/90 text-sm uppercase tracking-wider font-medium">Geita Region, Tanzania</span>
                 </motion.div>
 
@@ -57,10 +65,14 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.6 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
-                    <Button size="lg" className="w-full sm:w-auto text-lg px-10 py-6 shadow-2xl shadow-gold-500/40 hover:shadow-gold-500/60 transition-all">
-                        Get a Quote
+                    <Button
+                        size="lg"
+                        onClick={openQuote}
+                        className="bg-gold-500 text-charcoal-900 hover:bg-gold-400 font-bold px-8 py-6 text-lg shadow-lg shadow-gold-500/30 transition-all hover:scale-105"
+                    >
+                        Get a Quote <ChevronRight className="ml-2 h-5 w-5" />
                     </Button>
                     <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg px-10 py-6 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-charcoal-900 shadow-lg shadow-gold-500/20">
                         View Our Gold

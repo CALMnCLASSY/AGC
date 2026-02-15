@@ -3,98 +3,131 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, ShieldCheck } from "lucide-react";
+import { Menu, X, ShieldCheck, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoldPriceTicker } from "@/components/ui/GoldPriceTicker";
+import { useModal } from "@/context/ModalContext";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const { openQuote } = useModal();
 
     const navLinks = [
         { name: "Operations", href: "#operations" },
+        { name: "Products", href: "#products" },
         { name: "Compliance", href: "#compliance" },
-        { name: "Investors", href: "#investors" },
-        { name: "News", href: "#news" },
+        { name: "Contact", href: "#contact" },
     ];
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-gold-500/30 shadow-2xl">
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-charcoal-900/80 border-b border-gold-500/20 shadow-2xl shadow-gold-500/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center gap-3">
-                        <img
-                            src="/favicon.ico"
-                            alt="AGC Logo"
-                            className="w-10 h-10 rounded-md shadow-lg"
-                        />
-                        <span className="text-white font-heading text-xl tracking-wide uppercase font-bold">
-                            African <span className="gold-gradient-text">Gold</span> Co.
-                        </span>
-                    </div>
+                    {/* Logo & Company Name - Prominent and Visible */}
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="relative">
+                            {/* Golden A Logo with enhanced styling */}
+                            <div className="w-12 h-12 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 rounded-lg flex items-center justify-center shadow-lg shadow-gold-500/40 group-hover:shadow-gold-500/70 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                <span className="text-2xl font-bold text-charcoal-900">A</span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-xl font-heading font-bold text-white tracking-wide">
+                                African <span className="text-gold-500">Gold</span> Co.
+                            </span>
+                            <span className="text-xs text-gray-400 tracking-wider uppercase">Premium Gold Trading</span>
+                        </div>
+                    </Link>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-8">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-gray-300 hover:text-gold-400 transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide relative group"
-                                >
+                    {/* Desktop Navigation - Modern & Spacious */}
+                    <div className="hidden lg:flex items-center space-x-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="group relative px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
+                            >
+                                <span className="relative z-10 text-sm font-medium tracking-wide">
                                     {link.name}
-                                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                                </Link>
-                            ))}
-                        </div>
+                                </span>
+                                {/* Hover background effect */}
+                                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-gold-500/0 via-gold-500/10 to-gold-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                {/* Bottom border on hover */}
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent group-hover:w-full transition-all duration-300" />
+                            </Link>
+                        ))}
                     </div>
 
-                    {/* CTA & Actions */}
-                    <div className="hidden md:flex items-center gap-4">
+                    {/* Desktop CTA Section */}
+                    <div className="hidden lg:flex items-center gap-4">
                         <GoldPriceTicker />
-                        <div className="flex items-center gap-2 glass-panel px-3 py-1.5 rounded-full border border-gold-500/20">
+
+                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-charcoal-800/50 border border-gold-500/20">
                             <ShieldCheck className="w-4 h-4 text-gold-500" />
-                            <span className="text-gold-500/90 text-xs uppercase tracking-wider font-medium">Licensed Exporter</span>
+                            <span className="text-xs text-gold-400 font-medium tracking-wide">Licensed</span>
                         </div>
-                        <Button variant="default" className="shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-shadow">
-                            Get a Quote
+
+                        <Button
+                            onClick={openQuote}
+                            className="bg-gradient-to-r from-gold-500 via-gold-500 to-gold-600 hover:from-gold-600 hover:via-gold-600 hover:to-gold-700 text-charcoal-900 font-bold px-6 py-2.5 shadow-lg shadow-gold-500/40 hover:shadow-gold-500/60 transition-all duration-300 hover:scale-110 uppercase tracking-wider"
+                        >
+                            <TrendingUp className="w-4 h-4 mr-2" />
+                            Get Quote
                         </Button>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="-mr-2 flex md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gold-500 hover:text-white hover:bg-charcoal-800/50 focus:outline-none transition-colors"
-                        >
-                            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                        </button>
-                    </div>
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="lg:hidden p-3 rounded-lg text-gold-500 hover:bg-charcoal-800/50 transition-colors border border-gold-500/20"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu - Slides in from top */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden glass-panel border-t border-gold-500/20 overflow-hidden"
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="lg:hidden border-t border-gold-500/20 bg-charcoal-900/95 backdrop-blur-xl"
                     >
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {navLinks.map((link) => (
-                                <Link
+                        <div className="px-4 py-6 space-y-3">
+                            {navLinks.map((link, index) => (
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-gray-300 hover:text-gold-400 hover:bg-charcoal-800/50 block px-3 py-2 rounded-md text-base font-medium uppercase transition-colors"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.1 }}
                                 >
-                                    {link.name}
-                                </Link>
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-charcoal-800/50 rounded-lg transition-all duration-200 font-medium border border-transparent hover:border-gold-500/20"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
                             ))}
-                            <div className="pt-4 pb-2">
-                                <Button className="w-full shadow-lg shadow-gold-500/20">Get a Quote</Button>
+
+                            <div className="pt-4 space-y-3 border-t border-gold-500/20">
+                                <GoldPriceTicker />
+
+                                <Button
+                                    onClick={() => {
+                                        setIsOpen(false);
+                                        openQuote();
+                                    }}
+                                    className="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-charcoal-900 font-bold py-3 shadow-lg"
+                                >
+                                    <TrendingUp className="w-4 h-4 mr-2" />
+                                    Get Quote
+                                </Button>
                             </div>
                         </div>
                     </motion.div>

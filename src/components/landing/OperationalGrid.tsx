@@ -62,19 +62,24 @@ export function OperationalGrid() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="group relative h-96 rounded-lg overflow-hidden glass-card"
+                            className="group relative h-96 rounded-lg overflow-hidden glass-card cursor-pointer"
                         >
-                            {/* Image Background */}
+                            {/* Image Background with improved optimization */}
                             <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                style={{ backgroundImage: `url(${op.image})` }}
+                                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                                style={{ 
+                                    backgroundImage: `url(${op.image})`,
+                                    backgroundAttachment: "fixed"
+                                }}
+                                role="img"
+                                aria-label={op.title}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/80 to-transparent group-hover:from-charcoal-900/95 transition-colors duration-500" />
 
                             {/* Content */}
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
                                 <div className="mb-auto opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="glass-panel inline-block p-3 rounded-lg">
+                                    <div className="glass-panel inline-block p-3 rounded-lg group-hover:scale-110 transition-transform">
                                         <op.icon className="h-8 w-8 text-gold-500" />
                                     </div>
                                 </div>
@@ -82,7 +87,7 @@ export function OperationalGrid() {
                                 <h3 className="text-2xl font-heading font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
                                     {op.title}
                                 </h3>
-                                <p className="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed">
+                                <p className="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 leading-relaxed max-w-xs">
                                     {op.description}
                                 </p>
 
@@ -90,7 +95,7 @@ export function OperationalGrid() {
                                     <span className="text-gold-500 font-mono text-sm uppercase tracking-wider font-bold">
                                         {op.stats}
                                     </span>
-                                    <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110">
                                         <ArrowUpRight className="h-5 w-5 text-gold-500" />
                                     </div>
                                 </div>

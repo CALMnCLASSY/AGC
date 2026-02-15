@@ -5,24 +5,24 @@ import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center whitespace-nowrap rounded-sm text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 uppercase tracking-wider",
+    "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 uppercase tracking-wider",
     {
         variants: {
             variant: {
-                default: "bg-gold-500 text-charcoal-900 hover:bg-gold-400 font-bold",
+                default: "bg-gold-500 text-charcoal-900 hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/40 hover:scale-105 font-bold active:scale-95",
                 destructive:
                     "bg-destructive text-destructive-foreground hover:bg-destructive/90",
                 outline:
-                    "border border-gold-500 bg-transparent text-gold-500 hover:bg-gold-500 hover:text-charcoal-900",
+                    "border-2 border-gold-500 bg-transparent text-gold-500 hover:bg-gold-500 hover:text-charcoal-900 hover:shadow-lg hover:shadow-gold-500/30 hover:scale-105",
                 secondary:
-                    "bg-charcoal-800 text-gold-500 hover:bg-charcoal-700 border border-charcoal-700",
+                    "bg-charcoal-800 text-gold-500 hover:bg-charcoal-700 border border-charcoal-700 hover:border-gold-500/50 hover:shadow-lg hover:shadow-gold-500/20",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
             },
             size: {
                 default: "h-12 px-8 py-2",
                 sm: "h-9 rounded-md px-3",
-                lg: "h-14 rounded-md px-10 text-base",
+                lg: "h-14 rounded-lg px-10 text-base",
                 icon: "h-10 w-10",
             },
         },

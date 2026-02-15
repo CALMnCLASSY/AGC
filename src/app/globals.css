@@ -1,6 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-gold-100: #f9f1d8;
+  --color-gold-200: #f0deaa;
+  --color-gold-300: #e6c67d;
+  --color-gold-400: #ddb055;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #aa8c2c;
+  --color-gold-700: #806921;
+  --color-gold-800: #554616;
+  --color-gold-900: #2b230b;
+
+  --color-charcoal-500: #2d2d2d;
+  --color-charcoal-800: #1a1a1a;
+  --color-charcoal-900: #121212;
+
+  --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
 
 :root {
   --background: #0a0a0a;
@@ -14,6 +31,7 @@ body {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
   background-attachment: fixed;
   font-family: var(--font-inter);
+  background-color: #0a0a0a;
 }
 
 h1,
@@ -41,14 +59,14 @@ h6 {
   backdrop-filter: blur(16px) saturate(150%);
   -webkit-backdrop-filter: blur(16px) saturate(150%);
   border: 1px solid rgba(212, 175, 55, 0.15);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .glass-card:hover {
-  background: rgba(26, 26, 26, 0.7);
+  background: rgba(26, 26, 26, 0.8);
   border-color: rgba(212, 175, 55, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px 0 rgba(212, 175, 55, 0.12);
 }
 
 .gold-gradient-text {
@@ -56,7 +74,7 @@ h6 {
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
 }
 
@@ -90,12 +108,35 @@ h6 {
   animation: spin 8s linear infinite;
 }
 
+/* Enhanced scrollbar styling */
 html {
   scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* Smooth transitions for interactive elements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 ::-webkit-scrollbar-track {
