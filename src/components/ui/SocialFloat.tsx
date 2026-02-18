@@ -37,7 +37,7 @@ export function SocialFloat() {
             </Link>
 
             <Link
-                href="https://wa.me/255123456789?text=I%20want%20to%20buy%20gold"
+                href="https://wa.me/255761929850?text=I%20want%20to%20buy%20gold"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-gray-400 hover:text-green-500 transition-all hover:scale-110 shadow-lg group"

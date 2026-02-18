@@ -37,10 +37,10 @@ export function Footer() {
                             Operations
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-400">
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Exploration Data</Link></li>
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Refinement Process</Link></li>
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Export Licensing</Link></li>
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Sustainability (ESG)</Link></li>
+                            <li><Link href="/operations/exploration" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Exploration Data</Link></li>
+                            <li><Link href="/operations/refinement" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Refinement Process</Link></li>
+                            <li><Link href="/operations/export-licensing" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Export Licensing</Link></li>
+                            <li><Link href="/operations/sustainability" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Sustainability (ESG)</Link></li>
                         </ul>
                     </div>
 
@@ -50,10 +50,10 @@ export function Footer() {
                             Our Gold
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-400">
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Gold Bars</Link></li>
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Bulk Orders</Link></li>
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Investment Gold</Link></li>
-                            <li><Link href="#" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Current Prices</Link></li>
+                            <li><Link href="/products/gold-bars" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Gold Bars</Link></li>
+                            <li><Link href="/products/bulk-orders" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Bulk Orders</Link></li>
+                            <li><Link href="/products/investment-gold" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Investment Gold</Link></li>
+                            <li><Link href="/products/current-prices" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Current Prices</Link></li>
                         </ul>
                     </div>
 
@@ -73,7 +73,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3 hover:text-white transition-colors group">
                                 <Mail className="h-5 w-5 text-gold-500 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                                <a href="mailto:corporate@africangold.co.tz" className="hover:text-gold-500 transition-colors">corporate@africangold.co.tz</a>
+                                <a href="mailto:pureafricagold@gmail.com" className="hover:text-gold-500 transition-colors">pureafricagold@gmail.com</a>
                             </li>
                         </ul>
                     </div>
@@ -82,12 +82,13 @@ export function Footer() {
                 <div className="mt-16 pt-8 border-t border-charcoal-700 text-center text-xs text-gray-500 uppercase tracking-wider space-y-4">
                     <p>&copy; {new Date().getFullYear()} African Gold Company. All rights reserved.</p>
                     <div className="flex justify-center gap-6">
-                        <Link href="#" className="hover:text-gold-500 transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-gold-500 transition-colors">Terms & Conditions</Link>
-                        <Link href="#" className="hover:text-gold-500 transition-colors">Compliance</Link>
+                        <Link href="/legal/privacy-policy" className="hover:text-gold-500 transition-colors">Privacy Policy</Link>
+                        <Link href="/legal/terms" className="hover:text-gold-500 transition-colors">Terms &amp; Conditions</Link>
+                        <Link href="/legal/compliance" className="hover:text-gold-500 transition-colors">Compliance</Link>
                     </div>
                 </div>
             </div>
         </footer>
     );
 }
+

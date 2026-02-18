@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, Shield, Sparkles } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
+import { ProductDetailsModal } from "@/components/ui/ProductDetailsModal";
 
 const products = [
     {
@@ -11,33 +13,105 @@ const products = [
         name: "1 Kilogram Gold Bar",
         purity: "99.9%",
         image: "/gallery/products/goldbarkilo.jpeg",
-        description: "Premium gold bar for serious investors"
+        description: "Premium gold bar for serious investors",
+        fullDescription: "Our 1kg gold bars represent the pinnacle of investment-grade precious metals. Each bar is meticulously refined to 99.9% purity and comes with full certification from independent assayers. Perfect for institutional investors and high-net-worth individuals looking to diversify their portfolio with tangible assets.",
+        specifications: {
+            purity: "99.9% (999 Fine Gold)",
+            weight: "1000 grams (32.15 troy oz)",
+            dimensions: "115mm x 52mm x 8mm",
+            certification: "LBMA Good Delivery"
+        },
+        features: [
+            "Independently assayed and certified",
+            "Serial numbered for traceability",
+            "Vacuum sealed in protective packaging",
+            "Full export documentation included",
+            "Insured shipping available worldwide",
+            "Direct from Tanzanian mines"
+        ]
     },
     {
         id: 2,
         name: "Gold Bars Collection",
         purity: "99.9%",
         image: "/gallery/products/goldbarseg2.jpeg",
-        description: "Various sizes available"
+        description: "Various sizes available",
+        fullDescription: "Our versatile gold bar collection offers multiple weight options to suit different investment needs. From 100g starter bars to 1kg investment pieces, each bar maintains our signature 99.9% purity standard. Ideal for both new investors and seasoned collectors building their holdings.",
+        specifications: {
+            purity: "99.9% (999 Fine Gold)",
+            weight: "100g, 250g, 500g, 1000g options",
+            dimensions: "Varies by weight class",
+            certification: "Independent Assay Certificate"
+        },
+        features: [
+            "Multiple weight denominations available",
+            "Competitive bulk pricing",
+            "Stackable design for secure storage",
+            "Tamper-evident packaging",
+            "Complete chain of custody documentation",
+            "Flexible quantities to match your budget"
+        ]
     },
     {
         id: 3,
         name: "Refined Gold",
         purity: "99.9%",
         image: "/gallery/products/goldbareg1.jpeg",
-        description: "Certified pure gold ready for export"
+        description: "Certified pure gold ready for export",
+        fullDescription: "Our refined gold undergoes rigorous quality control to ensure it meets international standards for purity and quality. Processed using state-of-the-art refinement technology, each piece is export-ready with complete compliance documentation. Perfect for international buyers requiring certified materials.",
+        specifications: {
+            purity: "99.9% minimum (999+ Fine)",
+            weight: "Custom quantities available",
+            dimensions: "Standard industry formats",
+            certification: "Full export licensing & certification"
+        },
+        features: [
+            "Exceeds international purity standards",
+            "Complete export documentation",
+            "Customs-cleared for global shipping",
+            "Suitable for further processing",
+            "Verified ethical sourcing",
+            "Competitive wholesale pricing"
+        ]
     },
     {
         id: 4,
         name: "Tanzanian Gold",
         purity: "99.9%",
         image: "/gallery/products/goldtz.jpeg",
-        description: "Direct from Tanzanian mines"
+        description: "Direct from Tanzanian mines",
+        fullDescription: "Sourced directly from our licensed operations in the Lake Victoria Goldfields, our Tanzanian gold represents the finest quality precious metals from East Africa. Each piece carries the heritage of responsible mining practices and comes with complete provenance documentation. Supporting local communities while delivering world-class investment products.",
+        specifications: {
+            purity: "99.9% (999 Fine Gold)",
+            weight: "Flexible quantities from 100g",
+            dimensions: "Various formats available",
+            certification: "Tanzanian Mining Commission Certified"
+        },
+        features: [
+            "Direct mine-to-market sourcing",
+            "Supports local Tanzanian communities",
+            "Fully licensed and regulated",
+            "Environmental sustainability certified",
+            "Transparent supply chain",
+            "Premium quality from African sources"
+        ]
     },
 ];
 
 export function ProductShowcase() {
     const { openQuote } = useModal();
+    const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+    const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+
+    const handleProductClick = (product: typeof products[0]) => {
+        setSelectedProduct(product);
+        setIsDetailsModalOpen(true);
+    };
+
+    const handleCloseDetailsModal = () => {
+        setIsDetailsModalOpen(false);
+        setTimeout(() => setSelectedProduct(null), 300);
+    };
 
     return (
         <section id="products" className="py-24 bg-gradient-to-b from-charcoal-800 via-charcoal-900 to-charcoal-800 relative overflow-hidden">
@@ -80,7 +154,7 @@ export function ProductShowcase() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            onClick={openQuote}
+                            onClick={() => handleProductClick(product)}
                             className="group glass-card rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer flex flex-col h-full"
                         >
                             <div className="relative h-64 w-full flex-shrink-0 bg-charcoal-800">
@@ -161,6 +235,14 @@ export function ProductShowcase() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Product Details Modal */}
+            <ProductDetailsModal
+                product={selectedProduct}
+                isOpen={isDetailsModalOpen}
+                onClose={handleCloseDetailsModal}
+                onGetQuote={openQuote}
+            />
         </section>
     );
 }
