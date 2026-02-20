@@ -3,9 +3,24 @@ import { ArrowLeft, ChevronRight, Package, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Bulk Orders | African Gold Company",
-    description: "Competitive bulk gold pricing for institutional buyers, refineries, and jewellers. Minimum 5kg orders with full documentation.",
+    title: "Bulk Gold Orders | Wholesale Gold Tanzania | African Gold Company",
+    description:
+        "Competitive bulk gold pricing for institutional buyers, refineries, jewellers, and banks. Minimum 5kg. Full assay certification, export documentation, insured shipping worldwide.",
+    keywords: [
+        "bulk gold Tanzania", "wholesale gold Africa", "buy gold in bulk",
+        "gold supplier institutional", "gold refinery supply Tanzania",
+        "gold wholesale price Africa", "large gold order Tanzania",
+        "gold dealer Africa", "Tanzania gold export wholesale",
+    ],
+    alternates: { canonical: "/products/bulk-orders" },
+    openGraph: {
+        title: "Bulk Gold Orders – Wholesale Pricing | African Gold Company",
+        description: "Institutional gold at competitive pricing. 5kg–100kg+ with dedicated account management.",
+        url: "https://pureafricagold.com/products/bulk-orders",
+        type: "website",
+    },
 };
+
 
 const tiers = [
     { range: "5kg – 20kg", discount: "Standard pricing", notes: "Full documentation, insured shipping" },

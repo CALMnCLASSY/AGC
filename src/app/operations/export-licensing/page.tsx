@@ -3,9 +3,24 @@ import { Shield, FileText, Globe, ChevronRight, ArrowLeft, CheckCircle2 } from "
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Export Licensing | African Gold Company",
-    description: "Fully licensed gold exporter operating under Tanzanian Mining Commission regulations with complete export documentation for global buyers.",
+    title: "Gold Export Licensing | Licensed Exporter Tanzania | African Gold Company",
+    description:
+        "Fully licensed gold exporter under Tanzania Mining Commission. Complete export documentation: Certificate of Origin, Assay Certificate, TMC Export Permit, Customs Declaration.",
+    keywords: [
+        "licensed gold exporter Tanzania", "Tanzania gold export permit",
+        "gold export documentation Tanzania", "TMC licensed gold exporter",
+        "gold exporter Africa", "legal gold export Tanzania", "gold certificate of origin",
+        "gold customs clearance Africa", "Tanzania mineral exporter licence",
+    ],
+    alternates: { canonical: "/operations/export-licensing" },
+    openGraph: {
+        title: "Gold Export Licensing – TMC Certified | African Gold Company Tanzania",
+        description: "Full export documentation. TMC licensed. Shipping to UAE, UK, US, India, China, Switzerland.",
+        url: "https://pureafricagold.com/operations/export-licensing",
+        type: "website",
+    },
 };
+
 
 const licences = [
     {

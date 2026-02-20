@@ -132,7 +132,7 @@ export function LocationModule() {
                     >
                         <Mail className="h-8 w-8 text-gold-500 mx-auto mb-3" />
                         <h3 className="text-white font-bold mb-2 font-heading tracking-wide">Email</h3>
-                        <p className="text-gray-400 text-sm"><a href="mailto:corporate@africangold.co.tz" className="hover:text-gold-500 transition-colors">corporate@africangold.co.tz</a></p>
+                        <p className="text-gray-400 text-sm"><a href="mailto:sales@pureafricagold.com" className="hover:text-gold-500 transition-colors">sales@pureafricagold.com</a></p>
                     </motion.div>
                 </div>
             </div>

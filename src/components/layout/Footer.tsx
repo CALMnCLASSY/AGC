@@ -53,7 +53,6 @@ export function Footer() {
                             <li><Link href="/products/gold-bars" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Gold Bars</Link></li>
                             <li><Link href="/products/bulk-orders" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Bulk Orders</Link></li>
                             <li><Link href="/products/investment-gold" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Investment Gold</Link></li>
-                            <li><Link href="/products/current-prices" className="hover:text-gold-500 hover:translate-x-1 transition-all duration-200 inline-flex items-center">→ Current Prices</Link></li>
                         </ul>
                     </div>
 
@@ -73,7 +72,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3 hover:text-white transition-colors group">
                                 <Mail className="h-5 w-5 text-gold-500 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                                <a href="mailto:pureafricagold@gmail.com" className="hover:text-gold-500 transition-colors">pureafricagold@gmail.com</a>
+                                <a href="mailto:sales@pureafricagold.com" className="hover:text-gold-500 transition-colors">sales@pureafricagold.com</a>
                             </li>
                         </ul>
                     </div>

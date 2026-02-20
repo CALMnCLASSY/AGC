@@ -3,9 +3,23 @@ import { Pickaxe, MapPin, BarChart3, ChevronRight, ArrowLeft } from "lucide-reac
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Exploration Data | African Gold Company",
-    description: "Advanced geological surveys and mapping across 250+ sites in the Lake Victoria Goldfields, Tanzania.",
+    title: "Gold Exploration Data | Geita Mines | African Gold Company",
+    description:
+        "Advanced geological surveys across 250+ sites in Tanzania's Lake Victoria Goldfields. 15+ years of exploration data covering 1,200 sq km of prospective ground.",
+    keywords: [
+        "gold exploration Tanzania", "Lake Victoria Goldfields", "Geita gold exploration",
+        "Tanzania gold mine data", "geological survey Tanzania", "African gold deposit",
+        "Tanzania mineral exploration", "gold mining Tanzania", "Tanzanian goldfields",
+    ],
+    alternates: { canonical: "/operations/exploration" },
+    openGraph: {
+        title: "Gold Exploration Data – Lake Victoria Goldfields | African Gold Company",
+        description: "250+ mapped sites, 15+ years of data across 1,200 sq km. Geita Region, Tanzania.",
+        url: "https://pureafricagold.com/operations/exploration",
+        type: "website",
+    },
 };
+
 
 const stats = [
     { label: "Sites Mapped", value: "250+" },

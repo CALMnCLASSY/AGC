@@ -71,7 +71,7 @@ function NewsCard({ item, index }: { item: RssItem; index: number }) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-gold-500 text-sm hover:text-gold-400 font-medium transition-colors mt-auto"
                 >
-                    Read on Mining.com <ExternalLink className="h-3 w-3" />
+                    Read full article <ExternalLink className="h-3 w-3" />
                 </Link>
             </div>
         </motion.article>
@@ -184,8 +184,8 @@ export default function NewsPage() {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${activeCategory === cat
-                                    ? "bg-gold-500 text-charcoal-900"
-                                    : "border border-gold-500/30 text-gray-400 hover:border-gold-500/60 hover:text-white"
+                                ? "bg-gold-500 text-charcoal-900"
+                                : "border border-gold-500/30 text-gray-400 hover:border-gold-500/60 hover:text-white"
                                 }`}
                         >
                             {cat}

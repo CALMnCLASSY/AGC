@@ -3,9 +3,23 @@ import { Gem, Thermometer, FlaskConical, ChevronRight, ArrowLeft, CheckCircle2 }
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Refinement Process | African Gold Company",
-    description: "On-site gold refinement to 99.9% purity using state-of-the-art processing technology in the Geita Region, Tanzania.",
+    title: "Gold Refinement Process | 99.9% Purity | African Gold Company Tanzania",
+    description:
+        "Six-stage on-site gold refinement to 99.9% purity. LBMA Good Delivery standards. Independent assay certification. Tanzania Mining Commission certified.",
+    keywords: [
+        "gold refinery Tanzania", "gold refinement process", "99.9% gold purity",
+        "LBMA gold refinery Africa", "Geita gold processing", "gold smelting Tanzania",
+        "gold assay certification Africa", "carbon-in-leach gold", "gold certified purity",
+    ],
+    alternates: { canonical: "/operations/refinement" },
+    openGraph: {
+        title: "Gold Refinement – 99.9% Pure | African Gold Company",
+        description: "Six-stage process: ore to certified 99.9% pure gold bars. LBMA standards. Tanzania.",
+        url: "https://pureafricagold.com/operations/refinement",
+        type: "website",
+    },
 };
+
 
 const steps = [
     {

@@ -4,9 +4,28 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Gold Bars | African Gold Company",
-    description: "99.9% pure gold bars direct from Tanzanian mines. Available in 100g, 250g, 500g, and 1kg. Certified, insured, and shipped worldwide.",
+    title: "Gold Bars for Sale | 99.9% Pure | Tanzania – African Gold Company",
+    description:
+        "Buy certified 99.9% pure gold bars direct from Tanzania. Available in 100g, 250g, 500g and 1kg. LBMA Good Delivery standards. Full export documentation. Contact us for pricing.",
+    keywords: [
+        "buy gold bars Tanzania", "gold bars for sale Africa", "99.9 pure gold bars",
+        "1kg gold bar Tanzania", "investment gold bars", "LBMA gold Tanzania",
+        "certified gold bars", "Geita gold bars", "gold kilo bar Africa",
+    ],
+    alternates: { canonical: "/products/gold-bars" },
+    openGraph: {
+        title: "Gold Bars for Sale – 99.9% Pure | African Gold Company",
+        description: "Buy certified 99.9% pure gold bars direct from Tanzanian mines. 100g–1kg available. Contact us for market pricing.",
+        url: "https://pureafricagold.com/products/gold-bars",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Gold Bars – 99.9% Pure | African Gold Company Tanzania",
+        description: "Direct from Geita mines. Certified, insured, shipped worldwide. Contact for pricing.",
+    },
 };
+
 
 const products = [
     { weight: "100g", dimensions: "50mm x 28mm x 4mm", price: "Contact for price" },

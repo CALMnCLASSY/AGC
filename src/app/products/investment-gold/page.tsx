@@ -3,9 +3,24 @@ import { ArrowLeft, ChevronRight, TrendingUp, CheckCircle2 } from "lucide-react"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Investment Gold | African Gold Company",
-    description: "Physical gold investment products from Tanzania. Diversify your portfolio with certified 99.9% pure gold bars.",
+    title: "Investment Gold from Tanzania | Buy Physical Gold | African Gold Company",
+    description:
+        "Invest in physical gold certified 99.9% pure from Tanzania. Hedge against inflation, diversify your portfolio with real gold bars. Contact us for investment pricing.",
+    keywords: [
+        "investment gold Tanzania", "buy physical gold Africa", "gold investment",
+        "gold portfolio diversification", "physical gold inflation hedge",
+        "tangible gold investment", "gold bullion investment", "safe haven gold Africa",
+        "Tanzania gold for investors",
+    ],
+    alternates: { canonical: "/products/investment-gold" },
+    openGraph: {
+        title: "Investment Gold – Certified 99.9% Pure | African Gold Company Tanzania",
+        description: "Physical gold for individuals, family offices, and institutions. Trusted Tanzanian source.",
+        url: "https://pureafricagold.com/products/investment-gold",
+        type: "website",
+    },
 };
+
 
 const benefits = [
     { title: "Inflation Hedge", desc: "Gold historically maintains purchasing power over time, protecting wealth against inflation." },
