@@ -126,8 +126,9 @@ const structuredData = {
         availableLanguage: ["English"],
       },
       sameAs: [
-        "https://facebook.com",
-        "https://linkedin.com",
+        "https://www.facebook.com/profile.php?id=61588598324204",
+        "http://www.linkedin.com/in/puregoldafrica",
+        "https://t.me/pureafricagold",
       ],
     },
     {

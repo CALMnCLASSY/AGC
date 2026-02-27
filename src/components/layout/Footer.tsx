@@ -16,16 +16,16 @@ export function Footer() {
                             direct from our licensed mines to global buyers.
                         </p>
                         <div className="flex space-x-4 pt-2">
-                            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                            <Link href="https://www.facebook.com/profile.php?id=61588598324204" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 hover:scale-110 transition-all duration-300">
                                 <Facebook className="h-5 w-5" />
                             </Link>
-                            <Link href="https://t.me/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                            <Link href="https://t.me/pureafricagold" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 hover:scale-110 transition-all duration-300">
                                 <Send className="h-5 w-5" />
                             </Link>
                             <Link href="https://wa.me/255761929850?text=I%20want%20to%20buy%20gold" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 hover:scale-110 transition-all duration-300">
                                 <MessageCircle className="h-5 w-5" />
                             </Link>
-                            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 hover:scale-110 transition-all duration-300">
+                            <Link href="http://www.linkedin.com/in/puregoldafrica" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-500 hover:scale-110 transition-all duration-300">
                                 <Linkedin className="h-5 w-5" />
                             </Link>
                         </div>

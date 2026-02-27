@@ -62,14 +62,22 @@ Reply directly to: ${formData.email}
             const { Resend } = await import('resend');
             const resend = new Resend(process.env.RESEND_API_KEY);
 
-            await resend.emails.send({
-                from: 'quotes@pureafricagold.com',   // Verified sender on your domain
-                to: 'sales@pureafricagold.com',       // Namecheap webmail inbox
+            // FROM must exactly match the domain verified in Resend dashboard
+            const result = await resend.emails.send({
+                from: 'African Gold Company <quotes@pureafricagold.com>',
+                to: ['sales@pureafricagold.com'],
                 replyTo: formData.email,
                 subject: `🪙 New Gold Quote — ${formData.inquiryType} (${formData.name})`,
                 text: emailText,
                 html: emailHtml,
             });
+
+            // Log full result — visible in Vercel → Functions → Logs
+            console.log('[Resend] result:', JSON.stringify(result));
+            if (result.error) {
+                console.error('[Resend] SEND FAILED:', result.error);
+                throw new Error(result.error.message);
+            }
         } else {
             console.warn('RESEND_API_KEY not set — email not sent');
             console.log('=== QUOTE REQUEST ===\n', emailText, '\n====================');

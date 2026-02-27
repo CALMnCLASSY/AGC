@@ -7,7 +7,7 @@ export function SocialFloat() {
     return (
         <div className="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3">
             <Link
-                href="https://facebook.com/africangoldcompany"
+                href="https://www.facebook.com/profile.php?id=61588598324204"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-gray-400 hover:text-blue-500 transition-all hover:scale-110 shadow-lg group"
@@ -17,7 +17,7 @@ export function SocialFloat() {
             </Link>
 
             <Link
-                href="https://t.me/africangoldofficial"
+                href="https://t.me/pureafricagold"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 transition-all hover:scale-110 shadow-lg group"
@@ -27,7 +27,7 @@ export function SocialFloat() {
             </Link>
 
             <Link
-                href="https://linkedin.com/company/african-gold-co"
+                href="http://www.linkedin.com/in/puregoldafrica"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-gray-400 hover:text-blue-600 transition-all hover:scale-110 shadow-lg group"
