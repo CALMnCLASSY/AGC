@@ -80,7 +80,7 @@ To exercise these rights, contact us at pureafricagold@gmail.com.`,
         content: `If you have questions about this Privacy Policy or how we handle your data, please contact us:
 
 Email: pureafricagold@gmail.com
-Phone: +255 761 929 850
+Phone: +255 761 929 850 / +255 759 823 322
 Address: Mwanza Region, Lake Victoria Goldfields, Tanzania`,
     },
 ];
