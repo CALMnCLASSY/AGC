@@ -70,7 +70,7 @@ export function Footer() {
                                 <Phone className="h-5 w-5 text-gold-500 flex-shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
                                 <div className="flex flex-col gap-1">
                                     <a href="tel:+255761929850" className="hover:text-gold-500 transition-colors">+255 761 929 850</a>
-                                    <a href="tel:+255759823322" className="hover:text-gold-500 transition-colors">+255 759 823 322</a>
+                                    <a href="tel:+255759823322" className="hover:text-gold-500 transition-colors">++255 781 412 887</a>
                                 </div>
                             </li>
                             <li className="flex items-center gap-3 hover:text-white transition-colors group">

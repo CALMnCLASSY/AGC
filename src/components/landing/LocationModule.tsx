@@ -122,7 +122,7 @@ export function LocationModule() {
                         <Phone className="h-8 w-8 text-gold-500 mx-auto mb-3" />
                         <h3 className="text-white font-bold mb-2 font-heading tracking-wide">Phone</h3>
                         <p className="text-gray-400 text-sm"><a href="tel:+255761929850" className="hover:text-gold-500 transition-colors">+255 761 929 850</a></p>
-                        <p className="text-gray-400 text-sm mt-1"><a href="tel:+255759823322" className="hover:text-gold-500 transition-colors">+255 759 823 322</a></p>
+                        <p className="text-gray-400 text-sm mt-1"><a href="tel:+255759823322" className="hover:text-gold-500 transition-colors">+255 781 412 887</a></p>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
