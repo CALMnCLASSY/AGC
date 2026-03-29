@@ -1,5 +1,6 @@
 import logger from '../shared/logger';
 import templates from '../shared/messageTemplates';
+import config from '../config';
 import { getBotInstance } from './index';
 
 const SOURCE = 'TelegramCampaigns';
@@ -106,4 +107,87 @@ export async function broadcastProductCatalog(): Promise<{ sent: number; failed:
   }
 
   return { sent, failed };
+}
+
+/**
+ * Send a specific message directly to the admin's DM.
+ * Used for the "clean" Facebook copy-paste feature.
+ */
+export async function sendAdminDirectMessage(text: string): Promise<void> {
+  const bot = getBotInstance();
+  const adminId = config.telegram.adminId;
+
+  if (!bot || !adminId) {
+    logger.warn(SOURCE, 'Bot or Admin ID not configured — cannot send direct message');
+    return;
+  }
+
+  try {
+    await bot.sendMessage(parseInt(adminId), `📋 *Facebook Copy-Paste Version:*\n\n${text}`, { 
+      parse_mode: 'Markdown' 
+    });
+    logger.info(SOURCE, `Copy-paste version sent to Admin (${adminId})`);
+  } catch (error: any) {
+    logger.error(SOURCE, `Failed to send message to admin ${adminId}`, error.message);
+  }
+}
+
+/**
+ * Send a message to any specific chat ID (channel, group, or user).
+ * Used for posting directly to a configured channel without relying on subscriber list.
+ */
+export async function sendToChat(chatId: string, text: string): Promise<void> {
+  const bot = getBotInstance();
+
+  if (!bot) {
+    logger.warn(SOURCE, 'Bot not initialized — cannot send to chat');
+    return;
+  }
+
+  try {
+    await bot.sendMessage(parseInt(chatId), text, { parse_mode: 'Markdown' });
+    logger.info(SOURCE, `Message sent to chat ${chatId}`);
+  } catch (error: any) {
+    logger.error(SOURCE, `Failed to send message to chat ${chatId}`, error.message);
+  }
+}
+
+/**
+ * Send a photo with caption to a specific chat (channel, group, user).
+ * Falls back to text-only if image sending fails.
+ */
+export async function sendPhotoToChat(chatId: string, imageUrl: string, caption: string): Promise<void> {
+  const bot = getBotInstance();
+  if (!bot) return;
+
+  try {
+    await bot.sendPhoto(parseInt(chatId), imageUrl, {
+      caption: caption.substring(0, 1024), // Telegram caption limit
+      parse_mode: 'Markdown',
+    });
+    logger.info(SOURCE, `Photo sent to chat ${chatId}`);
+  } catch (error: any) {
+    logger.error(SOURCE, `Photo failed for chat ${chatId}: ${error.message}. Falling back to text.`);
+    await sendToChat(chatId, caption);
+  }
+}
+
+/**
+ * Send a photo with caption to the admin DM (for Facebook copy-paste).
+ */
+export async function sendAdminPhoto(imageUrl: string, caption: string): Promise<void> {
+  const bot = getBotInstance();
+  const adminId = config.telegram.adminId;
+  if (!bot || !adminId) return;
+
+  try {
+    await bot.sendPhoto(parseInt(adminId), imageUrl, {
+      caption: `📋 *Facebook Copy-Paste Version:*\n\n${caption}`.substring(0, 1024),
+      parse_mode: 'Markdown',
+    });
+    logger.info(SOURCE, `Photo DM sent to Admin (${adminId})`);
+  } catch (error: any) {
+    logger.error(SOURCE, `Photo DM failed: ${error.message}. Falling back to text.`);
+    await sendAdminDirectMessage(caption);
+  }
 }

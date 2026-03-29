@@ -30,7 +30,11 @@ export function startFacebookBot(): express.Express {
   app.listen(config.server.port, () => {
     logger.info(SOURCE, `Facebook Messenger Bot server running on port ${config.server.port}`);
     logger.info(SOURCE, `Webhook URL: http://localhost:${config.server.port}/webhook`);
-    logger.warn(SOURCE, 'Using PLACEHOLDER credentials — replace with real tokens before deploying.');
+    
+    // Only warn if tokens appear to be placeholders
+    if (config.facebook.pageAccessToken.includes('PLACEHOLDER')) {
+      logger.warn(SOURCE, 'Using PLACEHOLDER credentials — replace with real tokens before deploying.');
+    }
   });
 
   return app;

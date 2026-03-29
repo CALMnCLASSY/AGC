@@ -32,12 +32,29 @@ export function startTelegramBot(): TelegramBot | null {
     // Register slash commands (/start, /products, etc.)
     registerCommands(bot);
 
-    // Handle free-text messages
+    // Handle free-text messages (from DMs and groups)
     bot.on('message', (msg) => {
-      // Skip if it's a command (already handled by commandHandler)
+      // Skip commands — already handled by commandHandler
       if (msg.text?.startsWith('/')) return;
       if (msg.text) {
         handleTextMessage(bot!, msg.chat.id, msg.text, msg.from);
+      }
+    });
+
+    // Handle channel posts — Telegram sends these as a DIFFERENT event type
+    // This is what fires when someone posts /start inside a channel
+    bot.on('channel_post', (msg) => {
+      const chatId = msg.chat.id;
+      const text = msg.text || '';
+
+      if (text === '/start' || text === `/start@${config.telegram.botUsername}`) {
+        logger.info(SOURCE, `Channel /start from chat ${chatId} (@${msg.chat.username || 'unknown'})`);
+        const { addSubscriber } = require('./campaigns');
+        addSubscriber(chatId.toString());
+        logger.info(SOURCE, `Channel ${chatId} added as subscriber`);
+        // Trigger an immediate post to welcome the new channel
+        const { triggerManualPost } = require('../shared/schedulerService');
+        triggerManualPost().catch((err: any) => logger.error(SOURCE, 'Failed to send welcome post to channel', err.message));
       }
     });
 

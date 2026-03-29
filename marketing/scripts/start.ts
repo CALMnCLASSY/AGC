@@ -1,6 +1,7 @@
 import logger from '../shared/logger';
 import { startFacebookBot } from '../facebook';
 import { startTelegramBot } from '../telegram';
+import { initScheduler } from '../shared/schedulerService';
 
 const SOURCE = 'Launcher';
 
@@ -38,6 +39,15 @@ async function main(): Promise<void> {
     }
   } catch (error: any) {
     logger.error(SOURCE, '🔵 Telegram Bot failed to start', error.message);
+  }
+
+  // Initialize AI Marketing Scheduler
+  logger.info(SOURCE, '🤖 Starting AI Marketing Scheduler...');
+  try {
+    initScheduler();
+    logger.info(SOURCE, '🤖 AI Marketing Scheduler started successfully');
+  } catch (error: any) {
+    logger.error(SOURCE, '🤖 AI Marketing Scheduler failed', error.message);
   }
 
   logger.info(SOURCE, '');

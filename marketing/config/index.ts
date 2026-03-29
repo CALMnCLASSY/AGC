@@ -18,11 +18,25 @@ export const config = {
   telegram: {
     botToken: process.env.TELEGRAM_BOT_TOKEN || 'PLACEHOLDER_TELEGRAM_BOT_TOKEN',
     botUsername: process.env.TELEGRAM_BOT_USERNAME || 'PLACEHOLDER_BOT_USERNAME',
+    adminId: process.env.TELEGRAM_ADMIN_ID || '',
+    channelId: process.env.TELEGRAM_CHANNEL_ID || '', // e.g. -1001234567890
+  },
+
+  // AI & Scheduling
+  ai: {
+    geminiApiKey: process.env.GEMINI_API_KEY || '',
+    groqApiKey: process.env.GROQ_API_KEY || '',
+    postsPerDay: parseInt(process.env.POSTS_PER_DAY || '25', 10),
+  },
+
+  // Image Service
+  image: {
+    unsplashAccessKey: process.env.UNSPLASH_ACCESS_KEY || '',
   },
 
   // Server
   server: {
-    port: parseInt(process.env.PORT || '3001', 10),
+    port: parseInt(process.env.PORT || '3031', 10),
     nodeEnv: process.env.NODE_ENV || 'development',
   },
 
